@@ -27,7 +27,7 @@ class Qlearning
 		void outlog(double value);
 
 	private:
-		double vending_machine(int s,int a,int &sd);
+		double state_machine(int s,int a,int &sd);
 		double max_Qval(int s,int num_a,std::vector< std::vector<double> > &Qtable);
 		int select_action(int s,int num_a,std::vector< std::vector<double> > &Qtable);
 		int epsilon_greedy(int epsilon,int s,int num_a,std::vector< std::vector<double> > &Qtable);

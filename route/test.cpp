@@ -51,7 +51,7 @@ void Qlearning::train()
 		//行動の選択
 		a=epsilon_greedy(epsilon,s,num_a,Qtable);
 		//行動の実行
-		reward=vending_machine(s,a,sd);
+		reward=state_machine(s,a,sd);
 		//sdにおけるＱ値の最大値を求める
 		Q_max=max_Qval(sd,num_a,Qtable);
 		//Ｑ値の更新
@@ -75,7 +75,7 @@ void Qlearning::train()
 
 }
 
-double Qlearning::vending_machine(int s,int a,int &sd)
+double Qlearning::state_machine(int s,int a,int &sd)
 {
 	double rew;
 
