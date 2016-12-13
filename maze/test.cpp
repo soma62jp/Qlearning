@@ -180,6 +180,7 @@ int Qlearning::xy2s(int x,int y,int x_size)
 
 double Qlearning::state_machine(int s,int a,int &sd)
 {
+/*	
 	double rew;
 
 	if(a==0){
@@ -196,7 +197,8 @@ double Qlearning::state_machine(int s,int a,int &sd)
 	}
 
 	return rew;
-
+*/
+	return 0;
 }
 
 double Qlearning::max_Qval(int s,int num_a,std::vector< std::vector<double> > &Qtable)
