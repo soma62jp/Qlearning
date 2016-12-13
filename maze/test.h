@@ -12,6 +12,7 @@
 #include <fstream>
 #include <string>
 #include <sstream> //文字ストリーム
+#include <iomanip>
 
 //---------------------------------------------------------------------------
 //using namespace std;
@@ -32,8 +33,11 @@ class Qlearning
 		int select_action(int s,int num_a,std::vector< std::vector<double> > &Qtable);
 		int epsilon_greedy(int epsilon,int s,int num_a,std::vector< std::vector<double> > &Qtable);
 
-		std::vector< std::vector<double> > Qtable;
+		int move(int a,int &x,int &y,int x_size);
+		int xy2s(int x,int y,int x_size);
 
+		std::vector< std::vector<double> > Qtable;
+		std::vector< std::vector<int> > maze;
 		
 		double Q_max;
 		double reward;
@@ -43,9 +47,13 @@ class Qlearning
 		const double gamma;
 		const int epsilon;
 		const int trial_max;
+		const int x_size;
+		const int y_size;
 
 		int num_a;
 		int num_s;
+		int x_init,y_init;
+		int num_step;
 
 		template <typename T> std::string tostr(const T& t)
 		{
